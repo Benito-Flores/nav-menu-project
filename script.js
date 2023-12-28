@@ -1,37 +1,36 @@
-// code to add a mobile pop up nav menu
+// opens navigation for mobile view
 
-const navOpen = document.querySelector('.nav-open');
-const navClose = document.querySelector('.nav-close');
+const openNav = document.querySelector('.nav-open');
+const closeNav = document.querySelector('.nav-close');
 const nav = document.querySelector('.nav-container');
 
-navOpen.addEventListener('click', ()=> {
-  nav.classList.add('open-navigation');
+openNav.addEventListener('click', ()=> {
+  nav.classList.add("open-navigation");
 });
 
-navClose.addEventListener('click', ()=> {
-  nav.classList.remove('open-navigation');
+closeNav.addEventListener('click', ()=> {
+  nav.classList.remove("open-navigation");
 });
 
-// code to add hover effects with current and none current links
+// removes hover and focus styling for current page
 
-const notCurrentPages = document.querySelectorAll('.nav-link');
 const currentPage = document.querySelector('.current-page');
+const notCurrentPages = document.querySelectorAll('.nav-link');
 
 notCurrentPages.forEach(link => {
   link.addEventListener('mouseover', ()=> {
-    currentPage.classList.remove('current-page');
+    currentPage.classList.remove("current-page");
   });
 
   link.addEventListener('mouseout', ()=> {
-    currentPage.classList.add('current-page');
+    currentPage.classList.add("current-page");
   });
 
   link.addEventListener('focus', ()=> {
-    currentPage.classList.remove('current-page');
+    currentPage.classList.remove("current-page");
   });
-
+  
   link.addEventListener('blur', ()=> {
-    currentPage.classList.add('current-page');
+    currentPage.classList.add("current-page");
   });
-
 });
